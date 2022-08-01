@@ -2,6 +2,7 @@ import {Composition} from 'remotion';
 import phone from './assets/phone.mp4';
 import tablet from './assets/tablet.mp4';
 import {Scene} from './Scene';
+import { SceneGlitchDrei } from './SceneGlitchDrei';
 
 // Welcome to the Remotion Three Starter Kit!
 // Two compositions have been created, showing how to use
@@ -26,10 +27,24 @@ const deviceType: Device = 'phone';
 export const RemotionVideo: React.FC = () => {
 	return (
 		<>
+			{/* takes 38 seconds to render locally */}
 			<Composition
-				id="Scene"
+				id="no-effects"
 				component={Scene}
-				durationInFrames={300}
+				durationInFrames={300/2}
+				fps={30}
+				width={1280}
+				height={720}
+				defaultProps={{
+					videoSrc: deviceType === 'phone' ? phone : tablet,
+					baseScale: deviceType === 'phone' ? 1 : 1.8,
+				}}
+			/>
+			{/* takes 975 seconds to render locally */}
+			<Composition
+				id="glitch-drei"
+				component={SceneGlitchDrei}
+				durationInFrames={300/2}
 				fps={30}
 				width={1280}
 				height={720}

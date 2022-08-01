@@ -4,13 +4,16 @@
   "description": "A React Three Fiber Project",
   "scripts": {
     "start": "remotion preview src/index.tsx",
-    "build": "remotion render src/index.tsx Scene out/video.mp4",
+    "build": "remotion render src/index.tsx no-effects out/video.mp4",
+    "build-drei": "remotion render src/index.tsx glitch-drei out/drei.mp4",
+    "build-postprocessing": "remotion render src/index.tsx glitch-postprocessing out/postprocessing.mp4",
     "upgrade": "remotion upgrade",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
   },
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
+    "@react-three/drei": "^8.8.3",
     "@react-three/fiber": "^7.0.0",
     "@remotion/cli": "^3.0.0",
     "@remotion/eslint-config": "^3.0.0",
