@@ -57,6 +57,7 @@ export const RemotionVideo: React.FC = () => {
 			/>
 			{/* takes 105 seconds to render locally, but the effect is different from the one on the preview (less "strength") */}
 			{/* the effect doesnt work when playing the video on preview, only when the video is paused */}
+			{/* after updating dependencies took 346 seconds to render locally, the effect looks way better but still slight different in "strength" from preview */}
 			<Composition
 				id="glitch-postprocessing"
 				component={SceneGlitchPostProcessing}
